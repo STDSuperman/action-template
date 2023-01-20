@@ -1,0 +1,25 @@
+on: [push]
+
+jobs:
+  DeployTest:
+    runs-on: ubuntu-latest
+    name: TestJob
+    steps:
+      - uses: actions/checkout@v2 # 第一步，下载代码仓库
+      
+      - name: TestStep
+        id: Test
+        uses: STDSuperman/deploy-files@master
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          user: ${{ secrets.SERVER_USER }}
+          port: '22'
+          password: ${{ secrets.SERVER_PASSWORD }}
+          targetPath: '/home/test-dir'
+          sourcePath: './dist'
+          preCommands: |
+            rm -rf 1.ts
+            rm -rf 2.ts
+          commands: |
+            touch 1.ts
+            touch 2.ts

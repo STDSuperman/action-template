@@ -1,0 +1,6 @@
+name: 'Action Template'
+description: 'Action Template'
+author: 'XXX'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
