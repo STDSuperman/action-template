@@ -9,17 +9,6 @@ jobs:
       
       - name: TestStep
         id: Test
-        uses: STDSuperman/deploy-files@master
+        uses: STDSuperman/action-template@master
         with:
-          host: ${{ secrets.SERVER_HOST }}
-          user: ${{ secrets.SERVER_USER }}
-          port: '22'
-          password: ${{ secrets.SERVER_PASSWORD }}
-          targetPath: '/home/test-dir'
-          sourcePath: './dist'
-          preCommands: |
-            rm -rf 1.ts
-            rm -rf 2.ts
-          commands: |
-            touch 1.ts
-            touch 2.ts
+          host: 'aa.bb.cc.dd'
