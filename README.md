@@ -1,2 +1,2 @@
 # action-template
-A action template repository.
+An action template repository.
